@@ -1,8 +1,10 @@
-require('@std/esm');
-require('babel-register');
+require ('esm');
+require ('babel-register');
 
 try {
-    module.exports = require('./server/run');
+    module.exports = require ('./server/run');
 } catch (err) {
-    console.error(err);
+    console.error (err);
 }
+
+// End of index.js
