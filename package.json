@@ -39,8 +39,8 @@
         "url": "https://github.com/react-in-action/letters-social/issues"
     },
     "engines": {
-        "node": "12.22.12",
-        "npm": "6.14.16"
+        "node": "14.20.1",
+        "npm": "6.14.17"
     },
     "jest": {
         "testEnvironment": "jsdom",
