@@ -2,6 +2,8 @@
 logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 .sass-cache
 
 # Runtime data
@@ -16,7 +18,7 @@ lib-cov
 .nyc_output
 
 # Coverage directory used by tools like istanbul
-coverage
+/coverage
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
@@ -28,7 +30,9 @@ coverage
 build/Release
 
 # Dependency directory
-node_modules
+/node_modules
+/.pnp
+.pnp.js
 
 # Optional npm cache directory
 .npm
@@ -40,7 +44,6 @@ node_modules
 public/styles.*
 public/styles
 
-dist
 db/db.json
 static/bundle.js
 static/service-worker.js
@@ -48,5 +51,12 @@ static/styles.css
 static/manifest.json
 firebase-admin-key.json
 .esm-cache
-#Using flow personally but don't want to clutter the project with this if you're unfamiliar
+
+# Using flow personally but don't want to clutter the project with this if you're unfamiliar
 flow-typed
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# End of .gitignore
