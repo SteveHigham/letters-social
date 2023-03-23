@@ -42,19 +42,6 @@ Steve's Notes
 ------
 I want to get this application working with WebPack 5.
 This is problematic as there are breaking changes in the app.
-Not all the package.json scripts are working. Details are as follows:
-- analyze: Fails - generates invalid content under static/static/
-- api: Starts running process "JSON Server"
-- build:app: Runs fine.
-- build: Runs fine.
-- client:dev: Fails.
-- doc: Runs fine.
-- db:seed: Runs fine.
-- deploy: Fails.
-- dev: Fails.
-- server:dev: Runs process but logs errors and invalid page at http://localhost:3000/
-- start: Fails.
-- styles:w: Runs process but invalid page at http://localhost:3000/ and produces invalid content under static/static/
-- styles: Runs fine.
-- test:w: Fails.
-- test: Fails.
+Scripts are as follows:
+db:seed - Runs correctly, generates default data set.
+dev - Runs correctly, starts development environment
