@@ -17,7 +17,7 @@
         "api": "nodemon -x node -r esm ./db/run.js",
         "build:app": "cross-env NODE_ENV=production webpack -p --progress --config ./build/webpack.config.prod.js",
         "build": "cross-env NODE_ENV=production npm-run-all build:app db:seed",
-        "client:dev": "webpack-dev-server --config ./build/webpack.config.js",
+        "client:dev": "webpack-dev-server --config build/webpack.config.dev.js",
         "doc": "esdoc -c esdoc.json",
         "db:seed": "node -r esm db/seed.js",
         "deploy": "now -e LETTERS_FIREBASE_ADMIN_KEY=${LETTERS_FIREBASE_ADMIN_KEY} -d",
