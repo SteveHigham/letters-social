@@ -27,6 +27,7 @@ module.exports = {
     entry: ['./src/index'],
     cache: true,
     target: 'web',
+    mode: 'development',
     output: {
         path: `${__dirname}/lib`,
         publicPath: 'http://localhost:3000/',

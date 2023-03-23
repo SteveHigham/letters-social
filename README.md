@@ -45,3 +45,8 @@ This is problematic as there are breaking changes in the app.
 Scripts are as follows:
 db:seed - Runs correctly, generates default data set.
 dev - Runs correctly, starts development environment
+
+I am upgrading to webpack version 4.
+Problem is that webpack.config uses loaders. Need to replace loaders with rules.
+See https://webpack.js.org/migrate/3/#moduleloaders-is-now-modulerules
+
