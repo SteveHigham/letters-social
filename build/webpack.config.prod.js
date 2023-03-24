@@ -26,7 +26,6 @@ module.exports = {
         publicPath: '/',
         filename: 'bundle.js'
     },
-    mode: production,
     plugins: [
         new webpack.DefinePlugin(GLOBALS),
         new WebpackMd5Hash({
