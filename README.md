@@ -49,4 +49,4 @@ dev - Runs correctly, starts development environment
 I am upgrading to webpack version 4.
 Problem is that webpack.config uses loaders. Need to replace loaders with rules.
 See https://webpack.js.org/migrate/3/#moduleloaders-is-now-modulerules
-
+Also need to stop using sourcemaps.

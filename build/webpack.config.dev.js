@@ -56,7 +56,8 @@ module.exports = {
         })
     ],
     module: {
-        loaders: [
+        //loaders: [
+        rules: [
             {
                 test: /\.(eot|svg|woff|woff2|otf|ttf)$/,
                 exclude: /node_modules/,
