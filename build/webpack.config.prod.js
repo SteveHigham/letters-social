@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const uuid = require('uuid/v4');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
@@ -45,7 +44,6 @@ module.exports = {
             },
             sourceMap: false
         }),
-        new ExtractTextPlugin('styles.css'),
         new ManifestPlugin(),
         new SWPrecacheWebpackPlugin({
             cacheId: 'letters',
@@ -81,31 +79,46 @@ module.exports = {
             },
             {
                 test: /\.eot(\?v=\d+.\d+.\d+)?$/,
-                use: 'url-loader?name=[name].[ext]'
+                use: 'url-loader',
+                options: { name: '[name].[ext]' }
             },
             {
                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                use: 'url-loader?limit=10000&mimetype=application/font-woff&name=[name].[ext]'
+                use: 'url-loader',
+                options: {
+                    limit: 10000,
+                    mimetype: 'application/font-woff',
+                    name: '[name].[ext]'
+                }
+
             },
             {
                 test: /\.ttf(\?v=\d+.\d+.\d+)?$/,
-                use: 'url-loader?limit=10000&mimetype=application/octet-stream&name=[name].[ext]'
+                use: 'url-loader',
+                options: {
+                    limit: 10000,
+                    mimetype: 'application/octet-stream',
+                    name: '[name].[ext]'
+                }
             },
             {
                 test: /\.svg(\?v=\d+.\d+.\d+)?$/,
-                use: 'url-loader?limit=10000&mimetype=image/svg+xml&name=[name].[ext]'
+                use: 'url-loader',
+                options: {
+                    limit: 10000,
+                    mimetype: 'image/svg+xml',
+                    name: '[name].[ext]'
+                }
             },
             {
                 test: /\.(jpe?g|png|gif)$/i,
-                use: 'file-loader?name=[name].[ext]'
-            },
-            {
-                test: /\.json$/,
-                use: 'json-loader'
+                use: 'file-loader',
+                options: { name: '[name].[ext]' }
             },
             {
                 test: /\.ico$/,
-                use: 'file-loader?name=[name].[ext]'
+                use: 'file-loader',
+                options: { name: '[name].[ext]' }
             }
         ]
     }

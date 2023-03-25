@@ -32,9 +32,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     plugins: [
-        new webpack.NamedModulesPlugin (),
         new webpack.DefinePlugin (GLOBALS),
-        new webpack.HotModuleReplacementPlugin (),
         new webpack.NoEmitOnErrorsPlugin (),
         new HtmlWebpackPlugin ({
             // Create HTML file that includes references to bundled CSS and JS.
@@ -79,8 +77,14 @@ module.exports = {
                 test: /(\.css|\.scss)$/,
                 use: [
                     'style-loader',
-                    'css-loader?sourceMap',
-                    'sass-loader?sourceMap'
+                    {
+                        loader: 'css-loader',
+                        options: { sourceMap: true }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: { sourceMap: true }
+                    }
                 ]
             }
         ]
