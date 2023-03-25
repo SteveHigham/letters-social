@@ -17,11 +17,10 @@ const GLOBALS = {
 module.exports = {
     devServer: {
         hot: true,
-        inline: true,
         historyApiFallback: true,
         compress: true,
         port: 3000,
-        overlay: true
+        client: { overlay: true }
     },
     devtool: 'source-map',
     entry: ['./src/index'],
