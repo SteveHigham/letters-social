@@ -55,7 +55,6 @@ module.exports = {
         })
     ],
     module: {
-        //loaders: [
         rules: [
             {
                 test: /\.(eot|svg|woff|woff2|otf|ttf)$/,
@@ -70,12 +69,15 @@ module.exports = {
                 include: join(__dirname, '../', 'src'),
                 loader: 'babel-loader'
             },
-            { test: /\.(jpe?g|png|gif)$/i, loaders: ['file-loader'] },
-            { test: /\.ico$/, loader: 'file-loader?name=[name].[ext]' },
-            { test: /\.json$/, loader: 'json-loader' },
+            { test: /\.(jpe?g|png|gif)$/i, loader: 'file-loader' },
+            {
+                test: /\.ico$/,
+                loader: 'file-loader',
+                options: { name: '[name].[ext]' }
+            },
             {
                 test: /(\.css|\.scss)$/,
-                loaders: [
+                use: [
                     'style-loader',
                     'css-loader?sourceMap',
                     'sass-loader?sourceMap'
